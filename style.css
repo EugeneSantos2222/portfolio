@@ -1,0 +1,483 @@
+@font-face {
+  font-family: Eina;
+  src: url(./eina/Eina01-Regular.ttf);
+}
+
+@font-face {
+  font-family: Eina-bold;
+  src: url(./eina/Eina01-Bold.ttf);
+}
+
+@font-face {
+  font-family: Eina-semibold;
+  src: url(./eina/Eina01-SemiBold.ttf);
+}
+
+/* RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: unset;
+  font-size: unset;
+}
+
+img {
+  width: 100%;
+}
+
+ul,
+li,
+button,
+a {
+  all: unset;
+}
+
+/* ROOT */
+:root {
+  /* background */
+  --bg-color: #101415;
+  --box-bg-color: #9a361f;
+
+  /* text */
+  --text-color: #f1f1f1;
+}
+
+/* GLOBAL */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: Eina;
+  line-height: 0.8;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+}
+
+button {
+  color: var(--text-color);
+  font-family: Eina-bold;
+}
+
+button:hover {
+  color: #101415;
+  transition: all ease-in-out 0.25s;
+}
+
+@media only screen and (min-width: 375px) {
+  main {
+    padding: 3rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    padding: 10rem;
+  }
+}
+
+/* HOME STYLES */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+.home-container .about-btn {
+  width: 90px;
+  height: 45px;
+  background: url("./assets/AboutMeRedBox.png") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  cursor: pointer;
+}
+
+.home-container .hero {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  margin: 10rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-container .hero {
+    gap: 2.8rem;
+    flex-direction: row;
+    margin: 0;
+  }
+}
+
+.home-container .hero .primary-box {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  text-align: right;
+  margin-left: 10%;
+  max-width: 22rem;
+}
+
+.home-container .hero .primary-box::before {
+  content: "";
+  width: 24rem;
+  height: 24rem;
+  background: url("./assets/cat.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -55px;
+  left: -250px;
+}
+
+.home-container .hero .primary-box::after {
+  content: "";
+  position: absolute;
+  width: 17.5rem;
+  height: 17.5rem;
+  top: -72px;
+  right: -142px;
+  background: url("./assets/coral.png") no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-container .hero .primary-box::after {
+    width: 21.75rem;
+    height: 21.75rem;
+    top: -85px;
+    right: -180px;
+  }
+}
+
+.home-container .hero .primary-text {
+  font-size: 4rem;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/box-main.png") no-repeat right;
+  background-size: cover;
+  padding: 2rem;
+  letter-spacing: -5px;
+  font-family: Eina-semibold;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-container .hero .primary-text {
+    font-size: 5.15rem;
+    padding: 0 2rem;
+    left: -200px;
+  }
+}
+
+.home-container .hero .primary-text span:first-of-type {
+  font-size: 1.5rem;
+  line-height: 0px;
+  letter-spacing: -1px;
+  position: absolute;
+  right: 30px;
+  top: 70px;
+}
+
+.artist:hover {
+  cursor: pointer;
+  color: #101415;
+  transition: all ease-in-out 0.25s;
+}
+
+.home-container .hero .secondary-box {
+  background: url("./assets/box-dotted.png") no-repeat center;
+  background-size: cover;
+  width: 350px;
+  height: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
+}
+
+.home-container .hero .secondary-box p {
+  width: 10.8ch;
+  font-size: 1.1rem;
+  line-height: 0.9;
+}
+
+.home-container .hero .secondary-box span:hover {
+  cursor: pointer;
+  color: #101415;
+  transition: all ease-in-out 0.25s;
+}
+
+span {
+  font-family: Eina-bold;
+}
+
+.artworks {
+  width: 100%;
+}
+
+.deets {
+  margin-bottom: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-row img {
+  object-fit: cover;
+  object-position: center;
+  height: 650px;
+}
+
+.grid-row img:first-of-type {
+  grid-column: span 2;
+}
+
+.grid-container .grid-row:nth-child(even) img:nth-child(1) {
+  grid-column: span 1;
+}
+
+.grid-container .grid-row:nth-child(even) img:nth-child(2) {
+  grid-column: span 2;
+}
+
+/* ABOUT STYLES */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-container .home-btn {
+  width: 90px;
+  height: 45px;
+  background: url("./assets/home-btn.png") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.about-container .hero {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-container .hero {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+}
+
+.about-container .hero .primary-box {
+  height: 200px;
+  width: 375px;
+  background: url("./assets/es.png") no-repeat left;
+  background-size: cover;
+  display: flex;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 20px #101415;
+}
+
+@media only screen and (min-width: 465px) {
+  .about-container .hero .primary-box {
+    width: 500px;
+  }
+}
+
+.about-container .primary-box::after {
+  content: "";
+  width: 19rem;
+  height: 19rem;
+  background: url("./assets/Desert.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -35px;
+  right: -150px;
+}
+
+@media only screen and (min-width: 465px) {
+  .about-container .primary-box::after {
+    right: -45px;
+  }
+}
+
+.about-container .primary-box .primary-text {
+  font-size: 4rem;
+  width: 50%;
+  letter-spacing: -5px;
+  font-family: Eina-semibold;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-container .primary-box .primary-text {
+    font-size: 5.15rem;
+    letter-spacing: -5px;
+  }
+}
+
+.about-container .primary-box .primary-text span:first-of-type {
+  position: absolute;
+  font-size: 1.75rem;
+  top: 25px;
+  left: 70px;
+  font-family: Eina-semibold;
+  letter-spacing: -2px;
+}
+
+.about-container .secondary-box {
+  width: 200px;
+  height: 200px;
+  background: url("./assets/under.png") no-repeat center;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-container .secondary-box {
+    display: block;
+  }
+}
+
+.about-container .secondary-box::after {
+  content: "";
+  width: 24.25rem;
+  height: 24.25rem;
+  background: url("./assets/Boquet.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 0;
+  top: -150px;
+  right: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-container .secondary-box::after {
+    top: -85px;
+    right: -165px;
+  }
+}
+
+.artist-info {
+  height: 100%;
+  width: 100%;
+  min-width: 375px;
+  max-width: 800px;
+  background: url("./assets/aboutbox.png") no-repeat center;
+  background-size: cover;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 1024px) {
+  .artist-info {
+    overflow: hidden;
+  }
+}
+
+.artist-info::after {
+  content: "";
+  width: 20rem;
+  height: 20rem;
+  background: url("./assets/Waving.GIF") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -250px;
+  right: 0px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .artist-info::after {
+    top: -60px;
+    right: -20px;
+  }
+}
+
+.artist-info::before {
+  content: "";
+  width: 7rem;
+  height: 7rem;
+  background: url("./assets/Flowers.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 70%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+
+.artist-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.artist-info li {
+  font-family: Eina-semibold;
+}
+
+.artist-info span:hover,
+.artist-info li:hover {
+  cursor: pointer;
+  color: #101415;
+  transition: all ease-in-out 0.25s;
+}
